@@ -1,6 +1,6 @@
 ## Clock Development Setup - Mac OsX
 
-Run the oneliner below to get setup with for development at Clock.
+Run the oneliner below to get setup for development at Clock.
 
 Will give you:
 
