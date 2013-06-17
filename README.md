@@ -8,4 +8,6 @@ Will give you:
 * MongoDB (Database)
 * ZeroMQ (Messaging System)
 
-     curl -sSL https://raw.github.com/ClockLimited/setup/setup.sh | sh
+```sh
+curl -sSL https://raw.github.com/ClockLimited/setup/setup.sh | sh
+```
