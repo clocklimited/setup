@@ -1,14 +1,19 @@
 # Stop if something fails
 set -e
 
+# /usr/local/bin doesn't exist on a fresh install
+if [ ! -d "/usr/local/bin" ]; then
+  sudo mkdir -p /usr/local/bin
+fi
+
 # Install the latest stable nave the node.js environment switcher Node.js
 sudo sh -c 'curl -fsSL https://raw.github.com/isaacs/nave/master/nave.sh > /usr/local/bin/nave && chmod ugo+x /usr/local/bin/nave'
 
 # Install a global node.js
-nave usemain stable
+sudo nave usemain stable
 
 # Is xcode needed?
-if [ -x `which xcodebuild` ]; then
+if [ -x "$(which xcodebuild)" ]; then
     echo Skipping xcode
 else
   echo Installing Xcode CLI tools
@@ -26,7 +31,7 @@ fi
 xcodebuild -license
 
 # Is brew needed?
-if [ -x `which brew` ]; then
+if [ -x "$(which brew)" ]; then
   echo Skipping brew
 else
   echo Installing brew
@@ -34,11 +39,15 @@ else
 fi
 
 # Is MongoDB needed?
-if [ -x `which mongo` ]; then
+if [ -x "$(which mongo)" ]; then
   echo Skipping MongoDB
 else
   echo Installing MongoDB
   brew install mongo
+
+  if [ ! -d ~/Library/LaunchAgents ]; then
+    mkdir -p ~/Library/LaunchAgents
+  fi
 
   # Launch mongo on startup
   ln -sfv /usr/local/opt/mongodb/*.plist ~/Library/LaunchAgents
