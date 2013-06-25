@@ -13,7 +13,7 @@ sudo sh -c 'curl -fsSL https://raw.github.com/isaacs/nave/master/nave.sh > /usr/
 sudo nave usemain stable
 
 # Is xcode needed?
-if [ -x "$(which xcodebuild)" ]; then
+if [ -x "$(xcode-select --print-path)" ]; then
     echo Skipping xcode
 else
   echo Installing Xcode CLI tools
