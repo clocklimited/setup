@@ -9,5 +9,6 @@ Will give you:
 * ZeroMQ (Messaging System)
 
 ```sh
-curl -sSL https://raw.github.com/ClockLimited/setup/master/setup.sh | bash
+curl -sSL https://raw.github.com/ClockLimited/setup/master/setup.sh >/tmp/setup.sh
+bash /tmp/setup.sh
 ```
