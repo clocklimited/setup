@@ -28,7 +28,7 @@ else
 fi
 
 # Accept the Xcode licence
-xcodebuild -license
+sudo xcodebuild -license
 
 # Is brew needed?
 if [ -x "$(which brew)" ]; then
