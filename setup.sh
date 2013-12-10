@@ -13,7 +13,7 @@ sudo sh -c 'curl -fsSL https://raw.github.com/isaacs/nave/master/nave.sh > /usr/
 sudo nave usemain stable
 
 # Is xcode needed?
-if [ -x "$(which xcodebuild)" ]; then
+if [ -x "$(xcode-select --print-path)" ]; then
     echo Skipping xcode
 else
   echo Installing Xcode CLI tools
@@ -28,14 +28,14 @@ else
 fi
 
 # Accept the Xcode licence
-xcodebuild -license
+sudo xcodebuild -license
 
 # Is brew needed?
 if [ -x "$(which brew)" ]; then
   echo Skipping brew
 else
   echo Installing brew
-  ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go)"
+  ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go/install)"
 fi
 
 # Is MongoDB needed?
@@ -58,3 +58,13 @@ fi
 
 # Install ZeroMQ
 brew install 0mq
+
+# Install zsh and oh-my-zsh
+if [ -x "$(which zsh)" ]; then
+    brew install zsh
+    curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
+fi
+
+# Install a bunch of useful tools
+brew install wget mtr iftop pv tmux
+

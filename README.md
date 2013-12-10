@@ -1,6 +1,6 @@
 ## Clock Development Setup - Mac OsX
 
-Run the oneliner below to get setup for development at Clock.
+Run the commands below to get setup for development at Clock.
 
 Will give you:
 
@@ -9,5 +9,6 @@ Will give you:
 * ZeroMQ (Messaging System)
 
 ```sh
-curl -sSL https://raw.github.com/ClockLimited/setup/master/setup.sh | bash
+curl -sSL https://raw.github.com/panfantastic/setup/master/setup.sh >/tmp/setup.sh
+bash /tmp/setup.sh
 ```
