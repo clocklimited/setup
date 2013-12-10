@@ -58,3 +58,13 @@ fi
 
 # Install ZeroMQ
 brew install 0mq
+
+# Install zsh and oh-my-zsh
+if [ -x "$(which zsh)" ]; then
+    brew install zsh
+    curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
+fi
+
+# Install a bunch of useful tools
+brew install wget mtr iftop pv tmux
+
