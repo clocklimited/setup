@@ -35,7 +35,7 @@ if [ -x "$(which brew)" ]; then
   echo Skipping brew
 else
   echo Installing brew
-  ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go/install)"
+  ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
 fi
 
 # Is MongoDB needed?
@@ -67,5 +67,47 @@ if [ -x "$(which zsh)" ]; then
 fi
 
 # Install a bunch of useful tools
-brew install wget mtr iftop pv tmux
+brew install wget mtr iftop pv tmux htop-osx hub
+
+# Python is required to build some node libs
+brew install python python3
+
+# Install gui apps with `brew cask install <app>`
+brew tap phinze/homebrew-cask
+brew install brew-cask
+
+brew cask install slack
+brew cask install tunnelblick
+
+# Needed for PHP sites
+brew cask install virtualbox
+
+# npm global packages
+
+# Used for testing most of projects at clock
+npm install -g mocha
+
+# The clock build and watch tool
+npm install -g pliers
+
+# Used to create a web server in the current directory
+npm install -g st
+
+# Filter and prettify JSON output
+npm install -g json
+
+# Most node application output log data via bunyan
+npm install -g bunyan
+
+# JS Coding Standards
+npm install -g jscs
+
+# JSHint
+npm install -g jshint
+
+# This allows you to switch npm configs.
+npm install -g npmrc
+
+# Prettify HTML
+npm install -g html
 
