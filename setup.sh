@@ -57,7 +57,8 @@ else
 fi
 
 # Install ZeroMQ
-brew install 0mq
+brew install pkg-config
+brew install zeromq
 
 # Install zsh and oh-my-zsh
 if [ -x "$(which zsh)" ]; then
