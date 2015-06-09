@@ -111,3 +111,5 @@ npm install -g npmrc
 # Prettify HTML
 npm install -g html
 
+# Install some useful npm packages globally
+npm install -g jscs jshint pliers mocha
