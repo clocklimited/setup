@@ -1,4 +1,4 @@
-## Clock Development Setup - Mac OsX
+## Clock Development Setup - Mac OS X
 
 Run the commands below to get setup for development at Clock.
 
