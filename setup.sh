@@ -69,6 +69,9 @@ fi
 # Install a bunch of useful tools
 brew install wget mtr iftop pv tmux htop-osx hub
 
+# memcached is required for development on some projects
+brew install memcached
+
 # Python is required to build some node libs
 brew install python python3
 
