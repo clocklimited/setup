@@ -35,7 +35,7 @@ if [ -x "$(which brew)" ]; then
   echo Skipping brew
 else
   echo Installing brew
-  ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
+  ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 fi
 
 # Is MongoDB needed?
